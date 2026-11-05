@@ -4,6 +4,7 @@ namespace Rennokki\Rating\Test;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 use Rennokki\Rating\Models\RaterModel;
+use Rennokki\Rating\Test\Models\Page;
 use Rennokki\Rating\Test\Models\User;
 
 abstract class TestCase extends Orchestra

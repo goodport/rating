@@ -1,6 +1,7 @@
 {
-    "name": "rennokki/rating",
+    "name": "goodport/rating",
     "description": "Laravel Eloquent Rating allows you to assign ratings to any model.",
+    "type": "library",
     "keywords": [
         "eloquent",
         "laravel",
@@ -11,26 +12,28 @@
         "star",
         "system"
     ],
-    "homepage": "https://github.com/renoki-co/rating",
+    "homepage": "https://github.com/goodport/rating",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "Alex Renoki",
-            "email": "alex@renoki.org",
-            "homepage": "https://github.com/rennokki",
-            "role": "Developer"
+            "name": "Goodport",
+            "homepage": "https://github.com/goodport"
         }
     ],
+    "support": {
+        "issues": "https://github.com/goodport/rating/issues",
+        "source": "https://github.com/goodport/rating"
+    },
     "require": {
-        "illuminate/database": "^8.83|^9.0.1",
-        "illuminate/support": "^8.83|^9.0.1"
+        "php": "^8.2",
+        "illuminate/database": "^12.0",
+        "illuminate/support": "^12.0"
     },
     "require-dev": {
         "laravel/legacy-factories": "^1.3",
         "mockery/mockery": "^1.5",
-        "orchestra/testbench": "^6.28|^7.0",
-        "orchestra/testbench-core": "^6.28|^7.0",
-        "phpunit/phpunit": "^9.5.21"
+        "orchestra/testbench": "^10.0",
+        "phpunit/phpunit": "^11.5.3"
     },
     "autoload": {
         "psr-4": {
@@ -55,5 +58,6 @@
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

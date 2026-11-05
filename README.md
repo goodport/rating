@@ -1,45 +1,40 @@
 Laravel Eloquent Rating
 =======================
 
-![CI](https://github.com/renoki-co/rating/workflows/CI/badge.svg?branch=master)
-[![codecov](https://codecov.io/gh/renoki-co/rating/branch/master/graph/badge.svg)](https://codecov.io/gh/renoki-co/rating/branch/master)
-[![StyleCI](https://github.styleci.io/repos/142049701/shield?branch=master)](https://github.styleci.io/repos/141194551)
-[![Latest Stable Version](https://poser.pugx.org/rennokki/rating/v/stable)](https://packagist.org/packages/rennokki/rating)
-[![Total Downloads](https://poser.pugx.org/rennokki/rating/downloads)](https://packagist.org/packages/rennokki/rating)
-[![Monthly Downloads](https://poser.pugx.org/rennokki/rating/d/monthly)](https://packagist.org/packages/rennokki/rating)
-[![License](https://poser.pugx.org/rennokki/rating/license)](https://packagist.org/packages/rennokki/rating)
-
 Laravel Eloquent Rating allows you to assign ratings to any model, just like any other review based on stars.
 
-## 🤝 Supporting
+> This is the [Goodport](https://github.com/goodport) fork of
+> [rennokki/rating](https://github.com/rennokki/rating), updated for Laravel 12.
+> The original package and documentation were written by Alex Renoki.
 
-**If you are using one or more Renoki Co. open-source packages in your production apps, in presentation demos, hobby projects, school projects or so, sponsor our work with [Github Sponsors](https://github.com/sponsors/rennokki). 📦**
+## Requirements
 
-[<img src="https://github-content.s3.fr-par.scw.cloud/static/22.jpg" height="210" width="418" />](https://github-content.renoki.org/github-repo/22)
+- PHP 8.2+
+- Laravel 12
 
-## 🚀 Installation
+## Installation
 
 Install the package:
 
 ```bash
-$ composer require rennokki/rating
+composer require goodport/rating
 ```
 
 Publish the config:
 
 ```bash
-$ php artisan vendor:publish --provider="Rennokki\Rating\RatingServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Rennokki\Rating\RatingServiceProvider" --tag="config"
 ```
 
 Publish the migrations:
 
 ```bash
-$ php artisan vendor:publish --provider="Rennokki\Rating\RatingServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Rennokki\Rating\RatingServiceProvider" --tag="migrations"
 ```
 
 ## Preparing the model
 
-To allow a model to rate other models, it should use the `CanRate` trait and implement the  `Rater` contract.
+To allow a model to rate other models, it should use the `CanRate` trait and implement the `Rater` contract.
 
 ```php
 use Rennokki\Rating\Traits\CanRate;
@@ -79,7 +74,7 @@ class User extends Model implements Rating
 }
 ```
 
-## 🙌 Usage
+## Usage
 
 To rate other models, simply call `rate()` method:
 
@@ -136,21 +131,24 @@ $user->ratings()->get(); // Users that this user has rated
 $user->ratings(Page::class)->get(); // Pages that this user has rated
 ```
 
-## 🐛 Testing
+## Testing
 
-``` bash
-vendor/bin/phpunit
+```bash
+composer test
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## 🔒  Security
+## Security
 
-If you discover any security related issues, please email alex@renoki.org instead of using the issue tracker.
+If you discover a security issue, please report it privately through
+[GitHub Security Advisories](https://github.com/goodport/rating/security/advisories/new)
+instead of using the public issue tracker.
 
-## 🎉 Credits
+## Credits
 
-- [Alex Renoki](https://github.com/rennokki)
+- [Alex Renoki](https://github.com/rennokki) — original author of `rennokki/rating`
+- [Goodport](https://github.com/goodport) — Laravel 12 fork
 - [All Contributors](../../contributors)
