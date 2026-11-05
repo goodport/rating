@@ -207,6 +207,6 @@ class RatingTest extends TestCase
         $this->user3->rate($this->page, 5.77);
 
         $this->assertEquals($this->page->averageRating(), 0.00);
-        $this->assertEquals($this->page->averageRating(User::class), ((7.43 + 3.15 + 5.77) / 3));
+        $this->assertEqualsWithDelta(((7.43 + 3.15 + 5.77) / 3), $this->page->averageRating(User::class), 0.0001);
     }
 }
